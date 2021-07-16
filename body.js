@@ -5,14 +5,21 @@ const _options = {
     threshold: 1 - scroll,
 }
 
-const _observer = new IntersectionObserver(targets => {
-  for (const target of targets) {
-      if (!target.isIntersecting) {
-        console.log('here is 80%');
-      } else {
-          console.log('out of viewport');
-      }
-  };
-}, _options);
+const func = (target) => {
+    if (!target.isIntersecting) {
+        document.getElementById('body-content').innerHTML = 'hogehoge';
+    } else {
+        document.getElementById('body-content').innerHTML = '';
+    }
+}
 
-_observer.observe(document.body)
+const onChange = (t, options, func) => {
+    const observer = new IntersectionObserver(targets => {
+        targets.forEach(target => {
+            func(target);
+        });
+    }, options);
+    observer.observe(t)
+}
+
+onChange(document.body, _options, func);
