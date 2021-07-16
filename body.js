@@ -1,7 +1,7 @@
 const scroll = 0.8;
 const _options = {
     root: null,
-    rootMargin: '-100% 0px 1000% 0px',
+    rootMargin: '-100% 0px 100% 0px',
     threshold: 1 - scroll,
 }
 
