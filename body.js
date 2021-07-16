@@ -2,14 +2,13 @@ const scroll = 0.8;
 const _options = {
     root: null,
     rootMargin: '-100% 0px 100% 0px',
+    // threshold: [...Array(10)].map((_, i) => i/10),
     threshold: 1 - scroll,
 }
 
 const func = (target) => {
     if (!target.isIntersecting) {
-        document.getElementById('body-content').innerHTML = 'hogehoge';
-    } else {
-        document.getElementById('body-content').innerHTML = '';
+        console.log('80% yeah!')
     }
 }
 
