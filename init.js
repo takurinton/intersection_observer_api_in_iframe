@@ -1,7 +1,7 @@
 const element = document.getElementById('hoge');
-const shadowRoot = element.attachShadow({mode: 'closed'});
+const shadow = element.attachShadow({mode: 'closed'});
 
-shadowRoot.innerHTML = `
+shadow.innerHTML = `
 <p style="position: fixed" id="body-content"></p>
 <div id="box1" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
 <div id="box2" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
@@ -11,3 +11,10 @@ shadowRoot.innerHTML = `
 <script async defer src="index.js"></script>
 <script async defer src="body.js"></script>
 `;
+
+let index = document.createElement('script');
+let body = document.createElement('script');
+index.src = './index.js';
+body.src = './body.js';
+shadow.appendChild(index);
+shadow.appendChild(body);
