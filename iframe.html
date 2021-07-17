@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://www.takurinton.com/me.jpeg" type="image/x-icon">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box2" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box3" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box4" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box5" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box6" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box7" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box8" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box9" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <div id="box10" class="hoge" style="margin: 100px; height: 500px; width: 300px; background-color: aqua;"><p class="content"></p></div>
+    <script>
+        const scroll = 0.8;
+        const _options = {
+            root: null,
+            rootMargin: '-100% 0px 1000% 0px',
+            // threshold: [...Array(10)].map((_, i) => i/10),
+            threshold: 1 - scroll,
+        }
+
+        const func = (target) => {
+            if (!target.isIntersecting) {
+                console.log('80% here')
+            } else {
+                console.log('out of viewport')
+            }
+        }
+
+        const onChange = (t, options, func) => {
+            const observer = new IntersectionObserver(targets => {
+                targets.forEach(target => {
+                    func(target);
+                });
+            }, options);
+            observer.observe(t)
+        }
+
+        onChange(document.body, _options, func);
+    </script>
+</body>
+</html>
