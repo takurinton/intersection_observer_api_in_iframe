@@ -8,7 +8,9 @@ const _options = {
 
 const func = (target) => {
     if (!target.isIntersecting) {
-        console.log('80% yeah!')
+        console.log('80% here')
+    } else {
+        console.log('out of viewport')
     }
 }
 
