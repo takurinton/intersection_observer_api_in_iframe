@@ -27,3 +27,9 @@ iframe 内でのスクロール率判定ができない。
 しにゃい大先生から指摘もらって動いた！！！  
 
 参考：https://w3c.github.io/IntersectionObserver/#intersection-observer-interface
+
+
+### 補足
+
+ブログにまとめた。  
+[iframe について | たくりんとんのブログ](https://blog.takurinton.com/post/67)
